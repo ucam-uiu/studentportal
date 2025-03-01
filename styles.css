@@ -1,0 +1,499 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 14px;
+}
+
+/* University Header */
+.university-header {
+  background-color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo {
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+}
+
+.semester-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.current,
+.registration {
+  margin-bottom: 5px;
+}
+
+.label {
+  font-weight: normal;
+  color: #000;
+}
+
+.highlight {
+  color: #c00;
+  font-weight: bold;
+}
+
+.user-info {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  margin: 0 5px;
+}
+
+.logout-btn {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 2px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+/* Main Navigation */
+.main-nav {
+  background-color: #f0f0f0;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0 20px;
+}
+
+.main-nav li {
+  margin-right: 20px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* Dashboard Cards */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.info-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.transcript {
+  background-color: #ff9966;
+}
+
+.balance {
+  background-color: #00b373;
+}
+
+.payment {
+  background-color: #ff6b6b;
+}
+
+.info-content {
+  text-align: center;
+}
+
+.info-content h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.info-content .value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-content .currency {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.info-content p {
+  font-size: 12px;
+}
+
+.payment-btn {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  padding: 0 20px 20px;
+  gap: 20px;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-column {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-header {
+  margin-bottom: 0;
+}
+
+.important,
+.notice,
+.routine,
+.advisor,
+.attendance,
+.profile,
+.result {
+  display: inline-block;
+  padding: 3px 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.important,
+.notice,
+.routine,
+.advisor,
+.attendance,
+.profile,
+.result {
+  background-color: #28a745;
+}
+
+.announcement-content,
+.advisor-content,
+.attendance-content,
+.result-content,
+.notice-container,
+.routine-content,
+.profile-content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-content,
+.advisor-content,
+.attendance-content,
+.result-content,
+.routine-content,
+.profile-content {
+  padding: 15px;
+}
+
+.announcement-content h2 {
+  color: #006400;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.announcement-content p {
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  padding: 5px 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background-color: #fff;
+  border-bottom: 2px solid #007bff;
+}
+
+.notice-content {
+  padding: 15px;
+  min-height: 150px;
+}
+
+.advisor-content {
+  padding: 15px;
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.info-label {
+  flex: 1;
+  font-size: 14px;
+}
+
+.info-value {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.name,
+.initial,
+.email,
+.phone {
+  font-weight: bold;
+}
+
+/* Attendance Chart */
+.attendance-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 0;
+  position: relative;
+}
+
+.chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+}
+
+.chart-blue,
+.chart-dark,
+.chart-green {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.chart-blue {
+  background-color: #3498db;
+  height: 30px;
+}
+
+.chart-dark {
+  background-color: #333;
+  height: 120px;
+  color: #e74c3c;
+}
+
+.chart-green {
+  background-color: #2ecc71;
+  height: 40px;
+}
+
+.chart-course {
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.chart-menu {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
+
+.attendance-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-color.blue {
+  background-color: #3498db;
+}
+
+.legend-color.dark {
+  background-color: #333;
+}
+
+.legend-color.green {
+  background-color: #2ecc71;
+}
+
+.legend-text {
+  font-size: 12px;
+}
+
+/* Result Chart */
+.result-chart {
+  position: relative;
+  height: 200px;
+}
+
+.chart-lines {
+  width: 100%;
+  height: 100%;
+}
+
+/* Profile Section */
+.profile-content {
+  display: flex;
+  padding: 15px;
+}
+
+.profile-left {
+  width: 200px;
+  background-color: #00bcd4;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.profile-id {
+  font-size: 14px;
+  padding: 3px 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.profile-right {
+  flex: 1;
+  padding: 15px;
+}
+
+.profile-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.profile-info-grid .info-label {
+  font-weight: normal;
+}
+
+.profile-info-grid .info-value {
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .right-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .university-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .semester-info {
+    align-items: center;
+    margin-top: 10px;
+  }
+}

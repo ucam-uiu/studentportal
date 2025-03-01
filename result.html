@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Course History</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        font-size: 14px;
+        padding: 20px;
+      }
+
+      /* Main Content */
+      .main-content {
+        padding: 0;
+      }
+
+      .section-title {
+        color: #ff4500;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      /* Student Info Section */
+      .student-info-section {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+
+      .info-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .info-field {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
+
+      .info-field label {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .info-field input[type="text"] {
+        padding: 8px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+      }
+
+      .load-btn {
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        padding: 8px 50px;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      /* Status Section */
+      .status-section {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+
+      .status-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .detail-item {
+        width: calc(33.33% - 10px);
+        margin-bottom: 10px;
+      }
+
+      .detail-label {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      /* Message section */
+      .message-section {
+        margin-bottom: 15px;
+      }
+
+      /* Tables */
+      .table-section {
+        margin-bottom: 20px;
+      }
+
+      .table-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #4285f4;
+        color: white;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      /* Student photo */
+      .profile-img {
+        width: 100px;
+        height: 120px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+      }
+
+      .photo-cell {
+        padding: 0;
+        vertical-align: middle;
+      }
+
+      /* Result sections */
+      .result-section {
+        margin-bottom: 20px;
+      }
+
+      .result-title {
+        font-size: 16px;
+        font-weight: normal;
+        margin-bottom: 10px;
+      }
+
+      .no-data {
+        font-style: italic;
+        color: #777;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="section-title">Student Course History</div>
+
+      <div class="student-info-section">
+        <div class="info-row">
+          <div class="info-field">
+            <label for="student-id">Student ID :</label>
+            <input type="text" id="student-id" value="0212330026" />
+          </div>
+          <button class="load-btn">Load</button>
+        </div>
+
+        <div class="info-row">
+          <div class="info-field">
+            <label>Student Name :</label>
+            <span>Sk Arafat Bin Hossain</span>
+          </div>
+          <div class="info-field">
+            <label>Program :</label>
+            <span>BSEEE</span>
+          </div>
+          <div class="info-field">
+            <label>Batch :</label>
+            <span>233 - Fall 2023</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-section">
+        <div class="status-grid">
+          <div class="detail-item">
+            <span class="detail-label">CGPA :</span>
+            <span>3.12</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Major :</span>
+            <span>--</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Major2 :</span>
+            <span></span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Degree Req. :</span>
+            <span>140.00</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Com. Credit(s) :</span>
+            <span>27.00</span>
+          </div>
+        </div>
+
+        <div class="status-grid">
+          <div class="detail-item">
+            <span class="detail-label">Probation :</span>
+            <span>No probation!</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Active Status :</span>
+            <span>Active</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Att. Credit(s) :</span>
+            <span>36.00</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Waived/Transferred Credit(s) :</span>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="message-section">
+        <p>Message:</p>
+      </div>
+
+      <div>
+        <div class="table-title">Trimester wise GPA and CGPA</div>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Trimester</th>
+              <th>Credit(Probation)</th>
+              <th>Term GPA(Probation)</th>
+              <th>CGPA(Probation)</th>
+              <th>Credit(Transcript)</th>
+              <th>GPA(Transcript)</th>
+              <th>CGPA(Transcript)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="photo-cell" rowspan="4">
+                <img
+                  src="images/user_photo.png"
+                  alt="Student Photo"
+                  class="profile-img"
+                />
+              </td>
+              <td>233</td>
+              <td>11.0</td>
+              <td>1.88</td>
+              <td>1.88</td>
+              <td>5.0</td>
+              <td>3.53</td>
+              <td>3.53</td>
+            </tr>
+            <tr>
+              <td>241</td>
+              <td>6.0</td>
+              <td>2.84</td>
+              <td>2.69</td>
+              <td>6.0</td>
+              <td>2.84</td>
+              <td>3.15</td>
+            </tr>
+            <tr>
+              <td>242</td>
+              <td>10.0</td>
+              <td>1.03</td>
+              <td>2.14</td>
+              <td>4.0</td>
+              <td>2.58</td>
+              <td>3.00</td>
+            </tr>
+            <tr>
+              <td>243</td>
+              <td>12.0</td>
+              <td>2.92</td>
+              <td>3.12</td>
+              <td>12.0</td>
+              <td>2.92</td>
+              <td>3.12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="result-section">
+        <div class="result-title">Result of completed/registered courses</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Trimester</th>
+              <th>Course ID</th>
+              <th>Course Name</th>
+              <th>Credit</th>
+              <th>Grade</th>
+              <th>Point</th>
+              <th>Course Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>233</td>
+              <td>MAT 1101</td>
+              <td>Calculus I</td>
+              <td>3.00</td>
+              <td>D</td>
+              <td>1.00</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>233</td>
+              <td>EEE 1001</td>
+              <td>Electrical Circuits I</td>
+              <td>3.00</td>
+              <td>F</td>
+              <td>0.00</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>233</td>
+              <td>ENG 1011</td>
+              <td>English I</td>
+              <td>3.00</td>
+              <td>A-</td>
+              <td>3.67</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>233</td>
+              <td>BDS 1201</td>
+              <td>History of the Emergence of Bangladesh</td>
+              <td>2.00</td>
+              <td>B+</td>
+              <td>3.33</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>241</td>
+              <td>PHY 1101</td>
+              <td>Physics I</td>
+              <td>3.00</td>
+              <td>W</td>
+              <td>0</td>
+              <td>Withdraw</td>
+            </tr>
+            <tr>
+              <td>241</td>
+              <td>MAT 1103</td>
+              <td>Calculus II</td>
+              <td>3.00</td>
+              <td>W</td>
+              <td>0</td>
+              <td>Withdraw</td>
+            </tr>
+            <tr>
+              <td>241</td>
+              <td>EEE 1001</td>
+              <td>Electrical Circuits I</td>
+              <td>3.00</td>
+              <td>B</td>
+              <td>3.00</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>241</td>
+              <td>ENG 1013</td>
+              <td>English II</td>
+              <td>3.00</td>
+              <td>B-</td>
+              <td>2.67</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>242</td>
+              <td>CHE 2101</td>
+              <td>Chemistry</td>
+              <td>3.00</td>
+              <td>B</td>
+              <td>3.00</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>242</td>
+              <td>MAT 1101</td>
+              <td>Calculus I</td>
+              <td>3.00</td>
+              <td>B</td>
+              <td>3.00</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>242</td>
+              <td>EEE 1003</td>
+              <td>Electrical Circuits II</td>
+              <td>3.00</td>
+              <td>B-</td>
+              <td>2.67</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>242</td>
+              <td>EEE 1004</td>
+              <td>Electrical Circuits Laboratory</td>
+              <td>1.00</td>
+              <td>D+</td>
+              <td>1.33</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>243</td>
+              <td>PHY 1101</td>
+              <td>Physics I</td>
+              <td>3.00</td>
+              <td>B+</td>
+              <td>3.33</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>243</td>
+              <td>CHE 2101</td>
+              <td>Chemistry</td>
+              <td>3.00</td>
+              <td>B</td>
+              <td>3.00</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>243</td>
+              <td>MAT 1103</td>
+              <td>Calculus II</td>
+              <td>3.00</td>
+              <td>C+</td>
+              <td>2.33</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>243</td>
+              <td>EEE 1003</td>
+              <td>Electrical Circuits II</td>
+              <td>3.00</td>
+              <td>B-</td>
+              <td>2.67</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>251</td>
+              <td>EEE 2101</td>
+              <td>Electronics I</td>
+              <td>3.00</td>
+              <td></td>
+              <td></td>
+              <td>Running</td>
+            </tr>
+            <tr>
+              <td>251</td>
+              <td>PHY 1103</td>
+              <td>Physics II</td>
+              <td>3.00</td>
+              <td></td>
+              <td></td>
+              <td>Running</td>
+            </tr>
+            <tr>
+              <td>251</td>
+              <td>MAT 2105</td>
+              <td>Linear Algebra</td>
+              <td>3.00</td>
+              <td></td>
+              <td></td>
+              <td>Running</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="result-section">
+        <div class="result-title">Transferred/Waived courses</div>
+        <div class="no-data">No Data Found !</div>
+      </div>
+    </div>
+  </body>
+</html>
